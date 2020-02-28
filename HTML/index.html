@@ -4,37 +4,35 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="CSS/styles.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-        <title>Best Estonian Auction Site</title>
+        <title>Best Auction Site</title>
     </head>
     <body>
         <!--Upper menu section-->
         <header>
             <nav>
                 <ul>
-                    <li class="menu"><a href="#">Home</a></li>
-                    <li class="menu"><a href="#">All products</a></li>
-                    <li class="menu"><a href="#">Rules</a></li>
+                    <li style="background-color:limegreen"><a class="menu" href="./index.html">Home</a></li>
+                    <li><a class="menu" href="./allProducts.html">All products</a></li>
+                    <li><a class="menu" href="./about.html">About</a></li>
+                    <li class="right" style="float:right"><a class="menu" href="mailto:info@itcollege.ee">Contact</a></li>
                 </ul>
             </nav>
         </header>
         <!--Content of the webpage-->
-        <!--Name of the auction site-->
-        <nav>
+        <div>
             <h1>AuctionTime</h1>
+            <!--Search bar-->
             <input class="search" type="text" placeholder="Search..">
+            <!--Table for different categories-->
             <table width=400px>
                 <tr>
-                    <td class="cars">Cars</td>
-                    <td>Jewelry</td>
-                    <td>Property</td>
-                    <td>Antiques</td>
-                    <td>Rare foods</td>
+                    <td class="cars category"><a href="#">Cars</a></td>
+                    <td class="jewelry category"><a href="#">Jewelry</a></td>
+                    <td class="property category"><a href="#">Property</a></td>
+                    <td class="antiques category"><a href="#">Antiques</a></td>
+                    <td class="rarefoods category"><a href="#">Rare foods</a></td>
                 </tr>
             </table>
-        </nav>
-
-        <footer>
-            <a class="menu" href="mailto:info@itcollege.ee">Contact us</a>
-        </footer>
+        </div>
     </body>
 </html>
