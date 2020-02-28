@@ -59,7 +59,10 @@ table {
 	text-align: center;
 }
 td:nth-child(odd) {
-	background-color: darkgray;
+	background-color: lightgray;
+}
+.cars::before {
+	content: '\f1b9';
 }
 footer {
 	position: absolute;
