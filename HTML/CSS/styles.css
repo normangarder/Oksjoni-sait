@@ -30,9 +30,6 @@ li:nth-child(1)::before {
 	content: '\f015';
 	text-decoration: inherit;
 	font-family: "FontAwesome"
-	
-
-
 }
 h1 {
 	max-width: 250px;
@@ -68,6 +65,9 @@ footer {
 	height: 2.5rem;            /* Footer height */
 
 }
-.class {
+.menu a {
+	text-decoration: none;
+}
+.menu {
 	text-decoration: none;
 }
