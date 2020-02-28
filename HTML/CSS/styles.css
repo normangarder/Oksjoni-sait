@@ -25,11 +25,20 @@ ul {
 li {
 	float: left;
 	padding: 10px;
+	font-size: 25px;
 }
 li:nth-child(1)::before {
 	content: '\f015';
 	text-decoration: inherit;
+	color: navy;
 	font-family: "FontAwesome"
+<<<<<<< HEAD
+=======
+	
+	
+
+
+>>>>>>> e39db7a972735d50a2e15b22a174963fd96a8b0d
 }
 h1 {
 	max-width: 250px;
