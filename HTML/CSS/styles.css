@@ -15,10 +15,11 @@ html {
 }
 header {
 	height: 150px;
+	text-align: center;
 }
 ul {
 	list-style-type: none;
-	margin: auto;
+	text-align: center;
 }
 li {
 	float: left;
@@ -48,7 +49,7 @@ table {
 td:nth-child(odd) {
 	background-color: lightgray;
 }
-td:nth-child(1)::before {
+.cars::before {
 	content: '\f1b9';
 }
 footer {
