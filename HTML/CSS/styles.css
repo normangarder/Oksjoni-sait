@@ -25,11 +25,14 @@ ul {
 li {
 	float: left;
 	padding: 10px;
+	font-size: 25px;
 }
 li:nth-child(1)::before {
 	content: '\f015';
 	text-decoration: inherit;
+	color: navy;
 	font-family: "FontAwesome"
+	
 	
 
 
