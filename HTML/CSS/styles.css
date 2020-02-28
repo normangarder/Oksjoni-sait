@@ -28,7 +28,7 @@ h1 {
 	max-width: 250px;
 	margin: auto;
 }
-.search {
+.search a {
 	margin: 10px;
 	max-width: 250px;
 	margin: auto;
@@ -36,5 +36,11 @@ h1 {
 table {
 	max-width: 250px;
 	margin: auto;
+}
+footer {
+	
+}
+.class a {
+	text-decoration: none;
 }
 
