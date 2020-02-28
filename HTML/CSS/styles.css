@@ -6,7 +6,7 @@
 		background-repeat: no-repeat;
 		background-attachment: scroll;
 		background-size: cover;
-		color: silver;
+		color: black;
 	}
 }
 
@@ -15,5 +15,26 @@ html {
 }
 header {
 	height: 150px;
-	
 }
+ul {
+	list-style-type: none;
+	margin: auto;
+}
+li {
+	float: left;
+	padding: 10px;
+}
+h1 {
+	max-width: 250px;
+	margin: auto;
+}
+.search {
+	margin: 10px;
+	max-width: 250px;
+	margin: auto;
+}
+table {
+	max-width: 250px;
+	margin: auto;
+}
+
