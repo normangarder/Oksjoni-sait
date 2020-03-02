@@ -110,7 +110,18 @@ td:nth-child(odd) {
 	background-color: darkgray;
 }
 footer {
-	
+	background-color: black;
+	color: white;
+	height: 30px;
+	line-height: 30px;
+	bottom: 0;
+	position: fixed;
+	width: 100%;
+	text-align: right;
+	vertical-align: middle;
+}
+footer p {
+	margin: 0 10px 0 0;
 }
 /*icons for the table*/
 .cars::before {
