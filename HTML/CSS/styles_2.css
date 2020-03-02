@@ -7,7 +7,7 @@
 html {
 	font-family: "Times New Roman";
 }
-.header {
+header {
 	height: 150px;
 }
 /*navigation menu styling*/
@@ -48,7 +48,6 @@ li:nth-child(1) a::before {
 	color: white;
 	font-family: "FontAwesome";
 }
-/*user dropdown menu*/
 .dropdown-content {
 	display: none;
 	position: absolute;
@@ -69,67 +68,3 @@ li:nth-child(1) a::before {
 	display: block;
 }
 .dropdown-content a:hover {background-color: #f1f1f1;}
-h1 {
-	text-align: center;
-	font-size: 500%;
-	margin-bottom: 40px;
-}
-.search {
-	max-width: 220px;
-	margin: 10px auto;
-	padding: 3px;
-	font-size: 120%;
-	width: 100%;
-	display: block;
-	cursor: pointer;
-}
-/*table styling/category styling*/
-table {
-	border-collapse: collapse;
-	width: 60%;
-	margin-top: 50px;
-	margin-left: auto;
-	margin-right: auto;
-}
-td {
-	padding: 6px;
-	font-size: 135%;
-	text-align: center;
-	border: 2px solid black;
-}
-td a {
-	display: block;
-	width: 100%;
-	color: black;
-	text-decoration: none;
-}
-td:nth-child(odd) {
-	background-color: lightgray;
-}
-.category:hover {
-	background-color: darkgray;
-}
-footer {
-	
-}
-/*icons for the table*/
-.cars::before {
-	content: '\f1b9';
-	font-family: "FontAwesome";
-}
-.property::before {
-	content: '\f1ad';
-	font-family: "FontAwesome";
-}
-.rarefoods::before {
-	content: '\f18c';
-	font-family: "FontAwesome";
-}
-.antiques::before {
-	content: '\f000';
-	font-family: "FontAwesome";
-}
-.jewelry::before {
-	content: '\f091';
-	font-family: "FontAwesome";
-}

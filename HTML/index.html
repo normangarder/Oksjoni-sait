@@ -7,18 +7,24 @@
         <title>Best Auction Site</title>
     </head>
     <body>
-        <!--Upper menu section-->
-        <header>
+        <!--Upper navigation menu section-->
+        <div class="header">
             <nav>
                 <ul>
                     <li style="background-color:limegreen"><a class="menu" href="./index.html">Home</a></li>
                     <li><a class="menu" href="./allProducts.html">All products</a></li>
                     <li><a class="menu" href="./about.html">About</a></li>
                     <li><a class="menu" href="mailto:info@itcollege.ee">Contact</a></li>
-                    <li class="right" style="float:right"><a class="menu" href="#">Log in</a></li>
+                    <!--navigation menu item with a dropdown list-->
+                    <li class="right dropdown" style="float:right"><a class="menu icon" href="#">User</a>
+                        <div class="dropdown-content">
+                            <a href="#">Log in</a>
+                            <a href="#">Register</a>
+                        </div>
+                    </li>
                 </ul>
             </nav>
-        </header>
+        </div>
         <!--Content of the webpage-->
         <div>
             <h1>AuctionTime</h1>
@@ -33,7 +39,19 @@
                     <td class="category"><a class="antiques" href="#">Antiques</a></td>
                     <td class="category"><a class="rarefoods" href="#">Rare foods</a></td>
                 </tr>
+                <tr>
+                    <td class="category"><a class="paintings" href="#">Paintings</a></td>
+                    <td class="category"><a class="furniture" href="#">Furniture</a></td>
+                    <td class="category"><a class="electronics" href="#">Electronics</a></td>
+                    <td class="category"><a class="clothing" href="#">Clothing</a></td>
+                    <td class="category"><a href="#">Other</a></td>
+                </tr>
             </table>
         </div>
+        <footer>
+            <div>
+
+            </div>
+        </footer>
     </body>
 </html>
