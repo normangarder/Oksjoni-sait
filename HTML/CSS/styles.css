@@ -74,6 +74,9 @@ h1 {
 	font-size: 500%;
 	margin-bottom: 40px;
 }
+.caption {
+	background-image: url(../images/ban.jpg);
+}
 .search {
 	max-width: 220px;
 	margin: 10px auto;
