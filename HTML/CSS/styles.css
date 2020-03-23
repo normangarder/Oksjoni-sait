@@ -4,12 +4,18 @@
 		color: black;
 	}
 }
-html {
+
+html, body {
 	font-family: "Times New Roman";
+	box-sizing: border-box;
+	height: 100%;
+	width: 100%;
 }
+
 .header {
-	height: 60px;
+	height: 75px;
 }
+
 /*navigation menu styling*/
 ul {
 	list-style-type: none;
@@ -19,35 +25,46 @@ ul {
 	font-size: 125%;
 	background-color: #404040;
 }
+
 li {
 	float: left;
 	border-right: 1px solid white;
 }
+
 /*white line for contact option on navigation menu on the right*/
 .right {
 	border-left: 1px solid white;
+	float: right;
 }
+
 .menu:hover {
 	background-color: black;
 }
+
 li a {
 	display: block;
 	color: white;
 	padding: 15px;
 }
+
 .menu {
 	text-decoration: none;
+	padding-top: 25px;
+	padding-bottom: 25px;
 }
+
 li:nth-child(1) a::before {
 	content: '\f015';
 	color: white;
 	font-family: "FontAwesome"
 }
+
 .icon::before {
 	content: '\f007';
 	color: white;
 	font-family: "FontAwesome";
 }
+
 /*user dropdown menu*/
 .dropdown-content {
 	display: none;
@@ -58,6 +75,7 @@ li:nth-child(1) a::before {
 	z-index: 1;
 	right: 0;
 }
+
 .dropdown-content a {
 	color: black;
 	padding: 12px 16px;
@@ -65,88 +83,61 @@ li:nth-child(1) a::before {
 	display: block;
 	text-align: left;
 }
+
 .dropdown:hover .dropdown-content {
 	display: block;
 }
+
 .dropdown-content a:hover {background-color: #f1f1f1;}
 h1 {
 	text-align: center;
 	font-size: 500%;
 	margin: 0;
 	color: white;
+	width: 30%;
+	margin-left: 35%;
 }
+
 .caption {
-	background-image: url(../images/ban.jpg);
+	background-image: url(../images/place-properties-hero.jpg);
+	background-size: cover;
 	padding-top: 120px;
-	padding-bottom: 280px;
+	padding-bottom: 500px;
 }
-.search {
-	max-width: 220px;
-	margin: 10px auto;
-	padding: 3px;
-	font-size: 120%;
-	width: 100%;
-	display: block;
-	cursor: pointer;
-}
-/*table styling/category styling*/
-table {
-	border-collapse: collapse;
-	width: 60%;
-	margin-top: 50px;
-	margin-left: auto;
-	margin-right: auto;
-}
-td {
-	padding: 6px;
-	font-size: 135%;
+
+.subcaption {
+	height: 100px;
 	text-align: center;
-	border: 2px solid black;
+	background-color: lightskyblue;
 }
-td a {
-	display: block;
-	width: 100%;
-	color: black;
-	text-decoration: none;
-}
-td:nth-child(odd) {
-	background-color: lightgray;
-}
-.category:hover {
-	background-color: darkgray;
-}
-footer {
-	background-color: black;
+
+.subcaption h2 {
+	margin: 0;
 	color: white;
-	height: 30px;
-	line-height: 30px;
-	bottom: 0;
-	position: fixed;
+	padding-top: 30px;
+}
+
+.search {
+	margin-top: 25px;
+	margin-bottom: 25px;
+	margin-right: 10px;
+	margin-left: 10px;
+	font-size: 80%;
+}
+
+.offers {
+	display: grid;
+	grid-template-columns: 100px 100px 100px;
+  	grid-gap: 10px;
+  	background-color: #fff;
+	color: #444;
 	width: 100%;
-	text-align: right;
-	vertical-align: middle;
 }
-footer p {
-	margin: 0 10px 0 0;
-}
-/*icons for the table*/
-.cars::before {
-	content: '\f1b9';
-	font-family: "FontAwesome";
-}
-.property::before {
-	content: '\f1ad';
-	font-family: "FontAwesome";
-}
-.rarefoods::before {
-	content: '\f18c';
-	font-family: "FontAwesome";
-}
-.antiques::before {
-	content: '\f000';
-	font-family: "FontAwesome";
-}
-.jewelry::before {
-	content: '\f091';
-	font-family: "FontAwesome";
+
+.box {
+	background-color: #444;
+	color: #fff;
+	border-radius: 5px;
+	padding: 20px;
+	font-size: 150%;
 }
