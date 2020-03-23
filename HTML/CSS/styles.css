@@ -6,7 +6,6 @@
 }
 
 html, body {
-	font-family: "Times New Roman";
 	box-sizing: border-box;
 	height: 100%;
 	width: 100%;
@@ -181,9 +180,4 @@ h1 {
   @media only screen and (max-width: 600px) {
 	#p-grid { grid-template-columns: 50% 50%; }
   }
-  /* [DOES NOT MATTER] */
-  html, body {
-	padding: 0;
-	margin: 0;
-	font-family: arial, sans-serif;
-  }
+ 
