@@ -64,6 +64,14 @@ li:nth-child(1) a::before {
 	font-family: "FontAwesome";
 }
 
+.search {
+	margin-top: 25px;
+	margin-bottom: 25px;
+	margin-right: 10px;
+	margin-left: 10px;
+	font-size: 80%;
+}
+
 /*user dropdown menu*/
 .dropdown-content {
 	display: none;
@@ -89,6 +97,7 @@ li:nth-child(1) a::before {
 
 .dropdown-content a:hover {background-color: #f1f1f1;}
 
+/*Middle part*/
 h1 {
 	text-align: center;
 	font-size: 500%;
@@ -115,14 +124,6 @@ h1 {
 	margin: 0;
 	color: white;
 	padding-top: 30px;
-}
-
-.search {
-	margin-top: 25px;
-	margin-bottom: 25px;
-	margin-right: 10px;
-	margin-left: 10px;
-	font-size: 80%;
 }
 
 .register {
@@ -387,3 +388,4 @@ button:hover {
 	}
   
 }
+
