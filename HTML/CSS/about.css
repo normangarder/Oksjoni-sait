@@ -13,10 +13,10 @@
   .about-section {
     padding: 50px;
     text-align: center;
-      background-image: url(../images/pool.jpg);
-      background-size: cover;
-      padding-top: 120px;
-      padding-bottom: 500px;
+    background-image: url(../images/pool.jpg);
+    background-size: cover;
+    padding-top: 90px;
+    padding-bottom: 530px;
     
     color: white;
   }
