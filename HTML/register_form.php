@@ -1,4 +1,4 @@
-<?php include('server.php') ?>
+<?php include('register.php') ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <title>Register</title>
     </head>
-    <form method="POST" action="register.php" style="border:1px solid #ccc">
+    <form method="POST" action="register_form.php" style="border:1px solid #ccc">
         <div class="container">
           <h1>Sign Up</h1>
           <p>Please fill in this form to create an account.</p>
