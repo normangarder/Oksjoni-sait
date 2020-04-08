@@ -4,7 +4,7 @@
     $errors = array();
 
     //connection to the database
-    $db = mysqli_connect('anysql.itcollege.ee', 'maaash', 'pGISE6YZav', 'WT7');
+    $db = mysqli_connect('127.0.0.1', 'root', '', 'registration');
 
     //user registration
     if(isset($_POST['reg_user'])) {
