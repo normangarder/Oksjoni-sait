@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <title>Login</title>
     </head>
-    <form action="register.php" method="POST">
+    <?= renderErrors() ?><form method="POST">
         <div class="container">
           <label for="uname"><b>Username</b></label>
           <input type="text" placeholder="Enter Username" name="uname" required>
@@ -15,7 +15,7 @@
           <input type="password" placeholder="Enter Password" name="psw" required>
       
           <button type="submit" name="login_user">Login</button>
-          <p>Not a user? Register <a href="./register_form.html">here</a>.</p>
+          <p>Not a user? Register <a href="<?= getRouteUrl('login') ?>">here</a>.</p>
         </div>
       
         <div class="container" style="background-color:#f1f1f1">

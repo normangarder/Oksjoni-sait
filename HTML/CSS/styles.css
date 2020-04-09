@@ -55,13 +55,15 @@ li a {
 li:nth-child(1) a::before {
 	content: '\f015';
 	color: white;
-	font-family: "FontAwesome"
+	font-family: "FontAwesome";
+	margin-right: 5px;
 }
 
 .icon::before {
 	content: '\f007';
 	color: white;
 	font-family: "FontAwesome";
+	margin-right: 5px;
 }
 
 .search {

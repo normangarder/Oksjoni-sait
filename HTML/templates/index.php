@@ -7,31 +7,19 @@
         <title>Real Estate Auction Site</title>
     </head>
     <body>
-        <!--Upper navigation menu section-->
-        <div class="header">
-            <nav>
-                <ul>
-                    <li style="background-color:lightskyblue"><a class="menu" href="./index.html">Home</a></li>
-                    <li><a class="menu" href="./allProducts.html">All products</a></li>
-                    <li><a class="menu" href="./about.html">About</a></li>
-                    <li><a class="menu" href="mailto:info@itcollege.ee">Contact</a></li>
-                    <!--navigation menu item with a dropdown list-->
-                    <li class="right dropdown"><a class="menu icon" href="#">User</a>
-                        <div class="dropdown-content">
-                            <a href="./login_form.html">Log in</a>
-                            <a href="./register_form.php">Register</a>
-                        </div>
-                    </li>
-                    <li class="searchbar right"><input class="search" type="text" placeholder="Search.."></li>
-                </ul>
-            </nav>
-        </div>
+<?php
+require_once 'header.php';
+?>
         <!--Content of the webpage-->
         <div class="caption">
             <h1>Auction<span style="color:lightseagreen">Time</span></h1>
         </div>
         <div class="subcaption">
-            <h2>We are the number one real estate auction site<a href="./register_form.php" class="register">Register</a></h2>
+            <h2>We are the number one real estate auction site<?php
+                if (!logged()) {
+                    echo '<a href="?r=register" class="register">Register</a></h2>';
+                }
+                ?>
         </div>
         <!--Offers-->
         <div class="grid-caption">
@@ -39,42 +27,42 @@
         </div>
         <div id="p-grid">
             <div class="p-grid"><div class="p-grid-in">
-              <img class="p-img" src="../HTML/images/house-1.jpg"/>
+              <img class="p-img" src="../images/house-1.jpg"/>
               <div class="p-name">Long Point, IL</div>
               <div class="p-price">Starting bid $500,000</div>
               <div class="p-desc">3 Bedroom, 3 Bathroom, 240m².</div>
               <button class="p-add">Bid</button>
             </div></div>
             <div class="p-grid"><div class="p-grid-in">
-              <img class="p-img" src="../HTML/images/house-2.jpg"/>
+              <img class="p-img" src="../images/house-2.jpg"/>
               <div class="p-name">Red Lion, PA</div>
               <div class="p-price">Starting bid $800,000</div>
               <div class="p-desc">4 Bedroom, 3 Bathroom, 300m².</div>
               <button class="p-add">Bid</button>
             </div></div>
             <div class="p-grid"><div class="p-grid-in">
-              <img class="p-img" src="../HTML/images/house-3.jpg"/>
+              <img class="p-img" src="../images/house-3.jpg"/>
               <div class="p-name">Polk City, FL</div>
               <div class="p-price">Starting bid $400,000</div>
               <div class="p-desc">2 Bedroom, 2 Bathroom, 180m².</div>
               <button class="p-add">Bid</button>
             </div></div>
             <div class="p-grid"><div class="p-grid-in">
-              <img class="p-img" src="../HTML/images/house-4.jpg"/>
+              <img class="p-img" src="../images/house-4.jpg"/>
               <div class="p-name">Tomkins Cove, NY</div>
               <div class="p-price">Starting bid $700,000</div>
               <div class="p-desc">2 Bedroom, 2 Bathroom, 200m².</div>
               <button class="p-add">Bid</button>
             </div></div>
             <div class="p-grid"><div class="p-grid-in">
-              <img class="p-img" src="../HTML/images/house-5.jpg"/>
+              <img class="p-img" src="../images/house-5.jpg"/>
               <div class="p-name">Acron, OH</div>
               <div class="p-price">Starting bid $1,000,000</div>
               <div class="p-desc">3 Bedroom, 2 Bathroom, 210m².</div>
               <button class="p-add">Bid</button>
             </div></div>
             <div class="p-grid"><div class="p-grid-in">
-              <img class="p-img" src="../HTML/images/house-6.jpg"/>
+              <img class="p-img" src="../images/house-6.jpg"/>
               <div class="p-name">Rialto, CA</div>
               <div class="p-price">Starting bid $500,000</div>
               <div class="p-desc">2 Bedroom, 1 Bathroom, 150m².</div>
@@ -88,9 +76,9 @@
                   <h3>Auction<span>Time</span></h3>
           
                   <p class="footer-links">
-                    <a href="./index.html" class="link-1">Home</a>
+                    <a href="index.php" class="link-1">Home</a>
                     
-                    <a href="./about.html">About</a>
+                    <a href="../about.html">About</a>
                     
                     <a href="mailto:info@itcollege.ee">Contact</a>
                   </p>
