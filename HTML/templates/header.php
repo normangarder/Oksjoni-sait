@@ -3,9 +3,10 @@
     <nav>
         <ul>
             <li style="background-color:lightskyblue"><a class="menu" href="index.php">Home</a></li>
-            <li><a class="menu" href="<?= getRouteUrl('products') ?>">All products</a></li>
-            <li><a class="menu" href="about.html">About</a></li>
-            <li><a class="menu" href="mailto:info@itcollege.ee">Contact</a></li>
+            <li class="right dropdown"><a class="menu icon" href="<?= getRouteUrl('products') ?>">All products</a>
+                <div class="dropdown-content">
+                    <a href="?r=add_auction">Add</a>
+                </div></li>
             <!--navigation menu item with a dropdown list-->
             <?php
             $user = logged();

@@ -7,6 +7,7 @@ function routeExists($route)
         'logout',
         'register',
         'products',
+        'add_auction',
     ];
     if (in_array($route, $routes, true)) {
         return $route;
@@ -137,7 +138,18 @@ function handle_user()
             require_once 'templates/register_form.php';
             break;
         case 'products':
+            require_once 'sql.php';
             require_once 'templates/products.php';
+            break;
+        case 'add_auction':
+            if (isset($_POST['add_auction'])) {
+                require_once 'sql.php';
+                $added = addAuction($db, $_POST['title'], $_POST['description'], $_POST['startingbid']);
+                if ($added) {
+                    header('location: index.php');
+                }
+            }
+            require_once 'templates/auction_add_form.php';
             break;
         default:
             require_once 'templates/index.php';
