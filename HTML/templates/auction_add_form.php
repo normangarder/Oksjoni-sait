@@ -18,7 +18,7 @@ echo renderErrors();
 
             <div class="clearfix">
                 <button type="button" class="cancelbtn">Cancel</button>
-                <button type="submit" class="signupbtn" name="add_auction">Add</button>
+                <button type="submit" class="loginbtn" name="add_auction">Add</button>
             </div>
         </div>
     </form>
