@@ -45,6 +45,7 @@ function logged()
 function handle_user()
 {
     global $conf, $db;
+    $pageTitle = '';
     switch (getActualRoute()) {
         case 'login':
             //user login
@@ -73,6 +74,7 @@ function handle_user()
                     }
                 }
             }
+            $pageTitle = 'Login';
             require_once 'templates/login_form.php';
             break;
         case 'logout':
@@ -136,9 +138,11 @@ function handle_user()
                     ];
                 }
             }
+            $pageTitle = 'Register';
             require_once 'templates/register_form.php';
             break;
         case 'products':
+            $pageTitle = 'Product list';
             require_once 'templates/products.php';
             break;
         case 'add_auction':
@@ -157,6 +161,7 @@ function handle_user()
                     addError($e->getMessage());
                 }
             }
+            $pageTitle = 'Add auction';
             require_once 'templates/auction_add_form.php';
             break;
         default:
