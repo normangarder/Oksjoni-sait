@@ -22,7 +22,7 @@ require_once 'header.php';
                 echo '<div class="p-grid"><div class="p-grid-in">
               <img class="p-img" src="' . getFirstAuctionImage($item['id']) . '"/>
               <div class="p-name">' . $item['title'] . '</div>
-              <div class="p-price">' . $item['startingbid'] . '</div>
+              <div class="p-price">Starting bid: ' . $item['startingbid'] . '€</div>
               <div class="p-desc">' . $item['desc'] . '</div>
               <button class="p-add">Bid</button>
             </div></div>';
