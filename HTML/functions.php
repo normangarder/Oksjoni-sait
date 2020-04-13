@@ -139,13 +139,11 @@ function handle_user()
             require_once 'templates/register_form.php';
             break;
         case 'products':
-            require_once 'sql.php';
             require_once 'templates/products.php';
             break;
         case 'add_auction':
             if (isset($_POST['add_auction'])) {
                 try {
-                    require_once 'sql.php';
                     $added = addAuction($db, isSomething($_POST['title']), isSomething($_POST['description']), isSomething($_POST['startingbid']));
                     $image = addImage($db, $added, uploadImage());
                     if (!$image) {

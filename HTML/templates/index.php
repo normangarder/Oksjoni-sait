@@ -26,48 +26,17 @@ require_once 'header.php';
             <h2>Some Great Properties</h2>
         </div>
         <div id="p-grid">
-            <div class="p-grid"><div class="p-grid-in">
-              <img class="p-img" src="images/house-1.jpg"/>
-              <div class="p-name">Long Point, IL</div>
-              <div class="p-price">Starting bid $500,000</div>
-              <div class="p-desc">3 Bedroom, 3 Bathroom, 240m².</div>
+            <?php
+            foreach (getAuctions($db) as $item) {
+                echo '<div class="p-grid"><div class="p-grid-in">
+              <img class="p-img" src="' . getFirstAuctionImage($item['id']) . '"/>
+              <div class="p-name">' . $item['title'] . '</div>
+              <div class="p-price">' . $item['startingbid'] . '</div>
+              <div class="p-desc">' . $item['desc'] . '</div>
               <button class="p-add">Bid</button>
-            </div></div>
-            <div class="p-grid"><div class="p-grid-in">
-              <img class="p-img" src="images/house-2.jpg"/>
-              <div class="p-name">Red Lion, PA</div>
-              <div class="p-price">Starting bid $800,000</div>
-              <div class="p-desc">4 Bedroom, 3 Bathroom, 300m².</div>
-              <button class="p-add">Bid</button>
-            </div></div>
-            <div class="p-grid"><div class="p-grid-in">
-              <img class="p-img" src="images/house-3.jpg"/>
-              <div class="p-name">Polk City, FL</div>
-              <div class="p-price">Starting bid $400,000</div>
-              <div class="p-desc">2 Bedroom, 2 Bathroom, 180m².</div>
-              <button class="p-add">Bid</button>
-            </div></div>
-            <div class="p-grid"><div class="p-grid-in">
-              <img class="p-img" src="images/house-4.jpg"/>
-              <div class="p-name">Tomkins Cove, NY</div>
-              <div class="p-price">Starting bid $700,000</div>
-              <div class="p-desc">2 Bedroom, 2 Bathroom, 200m².</div>
-              <button class="p-add">Bid</button>
-            </div></div>
-            <div class="p-grid"><div class="p-grid-in">
-              <img class="p-img" src="images/house-5.jpg"/>
-              <div class="p-name">Acron, OH</div>
-              <div class="p-price">Starting bid $1,000,000</div>
-              <div class="p-desc">3 Bedroom, 2 Bathroom, 210m².</div>
-              <button class="p-add">Bid</button>
-            </div></div>
-            <div class="p-grid"><div class="p-grid-in">
-              <img class="p-img" src="images/house-6.jpg"/>
-              <div class="p-name">Rialto, CA</div>
-              <div class="p-price">Starting bid $500,000</div>
-              <div class="p-desc">2 Bedroom, 1 Bathroom, 150m².</div>
-              <button class="p-add">Bid</button>
-            </div></div>
+            </div></div>';
+            }
+            ?>
           </div>
           <footer class="footer-distributed">
           
