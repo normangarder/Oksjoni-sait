@@ -403,3 +403,12 @@ button:hover {
 	width: 120px;
 	height: 90px;
 }
+
+.products tr th {
+	text-align: left;
+	text-transform: capitalize;
+}
+
+.products tr th:first-child {
+	width: 120px;
+}
