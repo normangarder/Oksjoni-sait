@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/form_style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <title>Real Estate Auction Site</title>
+</head>
+<body>
 <!--Upper navigation menu section-->
 <div class="header">
     <nav>
@@ -25,8 +36,6 @@
                     </li>';
             }
             ?>
-
-            <li class="searchbar right"><input class="search" type="text" placeholder="Search.."></li>
         </ul>
     </nav>
 </div>

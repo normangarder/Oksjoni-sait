@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="CSS/register_style.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-        <title>Register</title>
-    </head>
-    <?= renderErrors() ?><form method="POST" style="border:1px solid #ccc">
+<?php
+require_once 'header.php';
+?>
+    <form method="POST" style="border:1px solid #ccc">
         <div class="container">
           <h1>Sign Up</h1>
           <p>Please fill in this form to create an account.</p>
@@ -31,8 +26,9 @@
 
           <div class="clearfix">
             <button type="button" class="cancelbtn">Cancel</button>
-            <button type="submit" class="signupbtn" name="reg_user">Sign Up</button>
+            <button type="submit" class="loginbtn" name="reg_user">Sign Up</button>
           </div>
         </div>
       </form>
-</html>
+<?php
+require_once 'footer.php';
