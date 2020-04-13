@@ -26,7 +26,8 @@ function getActualRoute()
     }
 }
 
-function getRouteUrl($route) {
+function getRouteUrl($route)
+{
     return '?r=' . routeExists($route); // vaata yle kui routeExists muutub...
 }
 
@@ -143,10 +144,19 @@ function handle_user()
             break;
         case 'add_auction':
             if (isset($_POST['add_auction'])) {
-                require_once 'sql.php';
-                $added = addAuction($db, $_POST['title'], $_POST['description'], $_POST['startingbid']);
-                if ($added) {
-                    header('location: index.php');
+                try {
+                    require_once 'sql.php';
+                    $added = addAuction($db, isSomething($_POST['title']), isSomething($_POST['description']), isSomething($_POST['startingbid']));
+                    $image = addImage($db, $added, uploadImage());
+                    if (!$image) {
+                        deleteAuction($added);
+                        $added = null;
+                    }
+                    if ($added) {
+                        header('location: index.php?r=products');
+                    }
+                } catch (InvalidArgumentException $e) {
+                    addError($e->getMessage());
                 }
             }
             require_once 'templates/auction_add_form.php';
@@ -164,7 +174,7 @@ function errors()
     if (isset($_SESSION['errors'])) {
         return $_SESSION['errors'];
     }
-    return null;
+    return [];
 }
 
 function clearErrors()
@@ -197,4 +207,69 @@ function refillValue($field)
     } else {
         return '';
     }
+}
+
+function uploadImage()
+{
+    $target_dir = "uploads/";
+    $target_file = $target_dir . rand(1, 10000000000000) . basename($_FILES["fileToUpload"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+// Check if image file is a actual image or fake image
+    if (isset($_POST["submit"])) {
+        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+        if ($check !== false) {
+            addError('File is an image - ' . $check["mime"] . '.');
+            $uploadOk = 1;
+        } else {
+            addError('File is not an image.');
+            $uploadOk = 0;
+        }
+    }
+// Check if file already exists
+    if (file_exists($target_file)) {
+        addError('Sorry, file already exists.');
+        $uploadOk = 0;
+    }
+// Allow certain file formats
+    if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+        && $imageFileType != "gif") {
+        addError('Sorry, only JPG, JPEG, PNG & GIF files are allowed.');
+        $uploadOk = 0;
+    }
+// Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        addError('Sorry, your file was not uploaded.');
+// if everything is ok, try to upload file
+    } else {
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+            addError('The file ' . basename($_FILES["fileToUpload"]["name"]) . ' has been uploaded.');
+        } else {
+            $uploadOk = 0;
+            addError('Sorry, there was an error uploading your file.');
+        }
+    }
+
+    return $uploadOk ? $target_file : null;
+}
+
+function getFirstAuctionImage($auction_id)
+{
+    global $db;
+    $filename = getFirstImageFilenameByAuction($db, $auction_id);
+    return $filename ?? 'images/house-1.jpg';
+}
+
+function deleteAuction($auction_id)
+{
+    global $db;
+    return deleteAuctionRow($db, $auction_id);
+}
+
+function isSomething($input)
+{
+    if (!$input) {
+        throw new InvalidArgumentException('NULL input');
+    }
+    return $input;
 }

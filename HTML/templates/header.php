@@ -3,7 +3,7 @@
     <nav>
         <ul>
             <li style="background-color:lightskyblue"><a class="menu" href="index.php">Home</a></li>
-            <li class="right dropdown"><a class="menu icon" href="<?= getRouteUrl('products') ?>">All products</a>
+            <li class="dropdown"><a class="menu icon" href="<?= getRouteUrl('products') ?>">All products</a>
                 <div class="dropdown-content">
                     <a href="?r=add_auction">Add</a>
                 </div></li>
