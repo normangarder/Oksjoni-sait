@@ -146,6 +146,7 @@ function handle_user()
             require_once 'templates/products.php';
             break;
         case 'add_auction':
+            guestGTFO();
             if (isset($_POST['add_auction'])) {
                 try {
                     $added = addAuction($db, isSomething($_POST['title']), isSomething($_POST['description']), isSomething($_POST['startingbid']));
@@ -281,4 +282,11 @@ function goHome()
 {
     header('location: index.php');
     exit;
+}
+
+function guestGTFO()
+{
+    if (!logged()) {
+        goHome();
+    }
 }
