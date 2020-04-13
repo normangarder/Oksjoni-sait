@@ -68,7 +68,7 @@ function handle_user()
                     if (mysqli_num_rows($results) == 1) {
                         $_SESSION['username'] = $username;
                         $_SESSION['success'] = "You are now logged in";
-                        header('location: index.php');
+                        goHome();
                     } else {
                         addError('Wrong username/password combination');
                     }
@@ -79,7 +79,7 @@ function handle_user()
             break;
         case 'logout':
             unset($_SESSION['username']);
-            header('location: index.php');
+            goHome();
             break;
         case 'register':
             //user registration
@@ -129,7 +129,7 @@ function handle_user()
                     mysqli_query($db, $query);
                     $_SESSION['username'] = $username;
                     $_SESSION['success'] = "You are now logged in";
-                    header('location: index.php');
+                    goHome();
                 } else {
                     $refill = [
                         'username' => $username,
@@ -275,4 +275,10 @@ function isSomething($input)
         throw new InvalidArgumentException('NULL input');
     }
     return $input;
+}
+
+function goHome()
+{
+    header('location: index.php');
+    exit;
 }
