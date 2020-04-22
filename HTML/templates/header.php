@@ -18,6 +18,7 @@
                 <div class="dropdown-content">
                     <a href="?r=add_auction">Add</a>
                 </div></li>
+            <li><a class="menu" href="about.html">About us</a></li>
             <!--navigation menu item with a dropdown list-->
             <?php
             $user = logged();
