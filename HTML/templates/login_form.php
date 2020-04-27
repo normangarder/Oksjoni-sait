@@ -14,7 +14,7 @@ echo renderErrors();
                 <button type="submit" class="loginbtn" name="login_user">Login</button>
                 <button type="button" class="cancelbtn">Cancel</button>
             </div>
-            <p>Not a user? Register <a href="<?= getRouteUrl('login') ?>">here</a>.</p>
+            <p>Not a user? Register <a href="<?= getRouteUrl('register') ?>">here</a>.</p>
         </div>
 
         <div class="container" style="background-color:#f1f1f1">
