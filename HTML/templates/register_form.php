@@ -22,7 +22,7 @@ require_once 'header.php';
           <label for="psw-repeat"><b>Repeat Password</b></label>
           <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
 
-          <p>Already a user? Login <a href="login_form.php">here</a>.</p>
+          <p>Already a user? Login <a href="<?= getRouteUrl('login') ?>">here</a>.</p>
 
           <div class="clearfix">
             <button type="button" class="cancelbtn">Cancel</button>
