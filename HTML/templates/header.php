@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
     <link rel="stylesheet" href="CSS/styles.css">
     <link rel="stylesheet" href="CSS/form_style.css">
+    <link rel="stylesheet" href="CSS/about.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <title><?= $pageTitle ? $pageTitle . ' | ' : '' ?>Auction site of life, the universe and everything.</title>
 </head>
