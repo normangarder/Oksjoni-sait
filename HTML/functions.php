@@ -8,6 +8,7 @@ function routeExists($route)
         'register',
         'products',
         'add_auction',
+        'about',
     ];
     if (in_array($route, $routes, true)) {
         return $route;
@@ -164,6 +165,10 @@ function handle_user()
             }
             $pageTitle = 'Add auction';
             require_once 'templates/auction_add_form.php';
+            break;
+        case 'about':
+            $pageTitle = 'About page';
+            require_once 'templates/about.php';
             break;
         default:
             require_once 'templates/index.php';
