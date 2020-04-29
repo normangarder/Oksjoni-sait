@@ -18,7 +18,7 @@
                 <div class="dropdown-content">
                     <a href="?r=add_auction">Add</a>
                 </div></li>
-            <li><a class="menu" href="templates/about.php">About us</a></li>
+            <li><a class="menu" href="<?= getRouteUrl('about') ?>">About us</a></li>
             <!--navigation menu item with a dropdown list-->
             <?php
             $user = logged();
