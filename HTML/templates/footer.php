@@ -3,7 +3,7 @@
         <h3>Auction<span>Time</span></h3>
         <p class="footer-links">
             <a href="index.php" class="link-1">Home</a>
-            <a href="../about.html">About</a>
+            <a href="<?= getRouteUrl('about') ?>">About</a>
             <a href="mailto:info@itcollege.ee">Contact</a>
         </p>
         <p class="footer-company-name">AuctionTime © 2020</p>
