@@ -76,3 +76,28 @@ function getFirstImageFilenameByAuction(Mysqli $mysqli, $auction_id)
     $stmt->fetch();
     return $image_filename;
 }
+
+function getAuctionAdded(Mysqli $mysqli, $auction_id)
+{
+    $sql = 'SELECT `inserted` FROM `auction` a  WHERE a.id = ?;';
+    $stmt = $mysqli->prepare($sql);
+    $stmt->bind_param('i', $auction_id);
+    $stmt->execute();
+    $stmt->bind_result($datetime);
+    $stmt->fetch();
+    return $datetime;
+}
+
+function addBidEntry(Mysqli $mysqli, $auction_id, $user_id , $bid_sum)
+{
+    $sql = 'INSERT INTO `bid` (`auction_id`, `user_id`, `bid`) VALUES (?, ?, ?);';
+    /** @var mysqli_stmt $stmt */
+    $stmt = $mysqli->prepare($sql);
+    $stmt->bind_param('iis', $auction_id, $user_id, $bid_sum);
+    $auction_id = (int) $auction_id;
+    $user_id = (int) $user_id;
+    $bid_sum = (float) $bid_sum;
+
+    $result = @$stmt->execute(); // ropp escape, aga praegu savi
+    return $stmt->insert_id;
+}

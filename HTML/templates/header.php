@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="CSS/form_style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <title><?= $pageTitle ? $pageTitle . ' | ' : '' ?>Auction site of life, the universe and everything.</title>
+    <script type="text/javascript" src="js/scripts.js"></script>
 </head>
 <body>
 <!--Upper navigation menu section-->

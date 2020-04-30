@@ -8,6 +8,7 @@ function routeExists($route)
         'register',
         'products',
         'add_auction',
+        'when_added',
     ];
     if (in_array($route, $routes, true)) {
         return $route;
@@ -165,6 +166,9 @@ function handle_user()
             $pageTitle = 'Add auction';
             require_once 'templates/auction_add_form.php';
             break;
+        case 'when_added':
+            echo getTimeLeft($_GET['auction']);
+            break;
         default:
             require_once 'templates/index.php';
     }
@@ -289,4 +293,21 @@ function guestGTFO()
     if (!logged()) {
         goHome();
     }
+}
+
+function getTime($id)
+{
+    global $db;
+    return getAuctionAdded($db, $id);
+}
+
+function getTimeLeft($auction_id) {
+    $add = '1 DAY';
+    $inserted_string = getTime($auction_id);
+    return date('c', strtotime($inserted_string . ' ' . $add));
+}
+
+function addBid() {
+
+
 }
