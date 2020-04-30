@@ -8,7 +8,11 @@ function routeExists($route)
         'register',
         'products',
         'add_auction',
+<<<<<<< HEAD
         'when_added',
+=======
+        'about',
+>>>>>>> 7b5078b530da11daaea55a1207d5b23780df06c2
     ];
     if (in_array($route, $routes, true)) {
         return $route;
@@ -166,8 +170,14 @@ function handle_user()
             $pageTitle = 'Add auction';
             require_once 'templates/auction_add_form.php';
             break;
+<<<<<<< HEAD
         case 'when_added':
             echo getTimeLeft($_GET['auction']);
+=======
+        case 'about':
+            $pageTitle = 'About page';
+            require_once 'templates/about.php';
+>>>>>>> 7b5078b530da11daaea55a1207d5b23780df06c2
             break;
         default:
             require_once 'templates/index.php';
