@@ -2,7 +2,7 @@
 require_once 'header.php';
 ?>
         <div class="about-section">
-            <h1>About Us Page</h1>
+            <h1>About Us</h1>
             <p>We are one of the leading real estate auction sites.</p>
             <p>Thank you for visiting our site.</p>
           </div>
