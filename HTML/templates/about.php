@@ -3,8 +3,8 @@ require_once 'header.php';
 ?>
         <div class="about-section">
             <h1>About Us Page</h1>
-            <p>Some text about who we are and what we do.</p>
-            <p>Resize the browser window to see that this page is responsive by the way.</p>
+            <p>We are one of the leading real estate auction sites.</p>
+            <p>Thank you for visiting our site.</p>
           </div>
           
           <h2 style="text-align:center">Our Team</h2>
@@ -15,7 +15,7 @@ require_once 'header.php';
                 <div class="container">
                   <h2>John Doe</h2>
                   <p class="title">CEO & Founder</p>
-                  <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                  <p>Founder and CEO of the real estate auction site AuctionTime.</p>
                   <p>john@example.com</p>
                   <p><button class="button">Contact</button></p>
                 </div>
@@ -28,7 +28,7 @@ require_once 'header.php';
                 <div class="container">
                   <h2>Mike Ross</h2>
                   <p class="title">Management</p>
-                  <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                  <p>Head of the management department.</p>
                   <p>mike@example.com</p>
                   <p><button class="button">Contact</button></p>
                 </div>
@@ -41,7 +41,7 @@ require_once 'header.php';
                 <div class="container">
                   <h2>Jane Doe</h2>
                   <p class="title">Agent</p>
-                  <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                  <p>Lead agent in selling real estate properties.</p>
                   <p>jane@example.com</p>
                   <p><button class="button">Contact</button></p>
                 </div>
