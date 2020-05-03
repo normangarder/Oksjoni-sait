@@ -42,14 +42,14 @@ CREATE TABLE `auction` (
 --
 
 INSERT INTO `auction` (`id`, `user_id`, `title`, `description`, `startingbid`, `inserted`) VALUES
-(35, 1, 'Monster', 'tegelt on kolm raadiot', '2000', '2020-04-27 22:37:28'),
-(36, 1, 'kaks raadiot', 'tegelt on kolm raadiot', '300', '2020-04-29 03:49:28'),
-(37, 1, 'kass', 'raisk', '1', '2020-04-30 01:37:28'),
-(38, 1, 'asdf', 'ererere', '3', '2020-04-30 01:37:28'),
-(41, 1, 'tere', 'asdf', '1111', '2020-04-30 01:37:28'),
-(42, 1, 'tere', 'ererere', '111', '2020-04-30 01:37:28'),
-(43, 1, 'kaks raadiot', 'asdf', '6666', '2020-04-30 01:37:28'),
-(44, 1, 'lempsi v6im', 'perses', '5', '2020-04-30 03:24:41');
+(35, 1, 'Long Island City, NY', '4 bedroom, 3 bathroom', '1000000', '2020-04-27 22:37:28'),
+(36, 1, 'Grand Rapids, MI', '2 bedroom, 2 bathroom', '500000', '2020-04-29 03:49:28'),
+(37, 1, 'Burlington, IA', '3 bedroom, 2 bathroom', '750000', '2020-04-30 01:37:28'),
+(38, 1, 'Eagan, MN', '2 bedroom, 2 bathroom', '400000', '2020-04-30 01:37:28'),
+(41, 1, 'Kaufman, TX', '4 bedroom, 3 bathroom', '1200000', '2020-04-30 01:37:28'),
+(42, 1, 'Seattle, WA', '3 bedroom, 2 bathroom', '600000', '2020-04-30 01:37:28'),
+(43, 1, 'Milwaukee, WI', '2 bedroom, 2 bathroom', '550000', '2020-04-30 01:37:28'),
+(44, 1, 'Cleveland, OH', '3 bedroom, 3 bathroom', '650000', '2020-04-30 03:24:41');
 
 -- --------------------------------------------------------
 
@@ -82,14 +82,14 @@ CREATE TABLE `image` (
 --
 
 INSERT INTO `image` (`id`, `auction_id`, `filename`, `img_order`) VALUES
-(12, 35, 'uploads/1633098869983712NgU9cRML._AC_SL1080_.jpg', 0),
-(13, 36, 'uploads/4871690022596180823-nasa-intern-loses-job-embed-1.jpg', 0),
-(14, 37, 'uploads/773140075801Thinking-of-getting-a-cat.png', 0),
-(15, 38, 'uploads/2258989258838sportland.png', 0),
-(17, 41, 'uploads/3002641275758712NgU9cRML._AC_SL1080_.jpg', 0),
-(18, 42, 'uploads/8524352237768712NgU9cRML._AC_SL1080_.jpg', 0),
-(19, 43, 'uploads/3125947102979Thinking-of-getting-a-cat.png', 0),
-(20, 44, 'uploads/4745004561925üheksa.png', 0);
+(12, 35, 'images/house-2.jpg', 0),
+(13, 36, 'images/house-3.jpg', 0),
+(14, 37, 'images/house-8.jpg', 0),
+(15, 38, 'images/house-7.jpg', 0),
+(17, 41, 'images/house-5.jpg', 0),
+(18, 42, 'images/house-1.jpg', 0),
+(19, 43, 'images/house-6.jpg', 0),
+(20, 44, 'images/house-4.jpg', 0);
 
 -- --------------------------------------------------------
 
