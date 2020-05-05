@@ -308,7 +308,7 @@ function getTime($id)
 }
 
 function getTimeLeft($auction_id) {
-    $add = '1 DAY';
+    $add = '1 MONTH';
     $inserted_string = getTime($auction_id);
     return date('c', strtotime($inserted_string . ' ' . $add));
 }
