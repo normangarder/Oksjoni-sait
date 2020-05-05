@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Loomise aeg: Aprill 12, 2020 kell 10:33 PL
+-- Loomise aeg: Aprill 30, 2020 kell 08:48 PL
 -- Serveri versioon: 10.4.11-MariaDB
 -- PHP versioon: 7.4.3
 
@@ -33,31 +33,23 @@ CREATE TABLE `auction` (
   `user_id` int(11) DEFAULT NULL,
   `title` varchar(255) NOT NULL,
   `description` text NOT NULL,
-  `startingbid` decimal(10,0) NOT NULL
+  `startingbid` decimal(10,0) NOT NULL,
+  `inserted` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Kärbi tabelit enne lisamist `auction`
---
-
-TRUNCATE TABLE `auction`;
 --
 -- Andmete tõmmistamine tabelile `auction`
 --
 
-INSERT INTO `auction` (`id`, `user_id`, `title`, `description`, `startingbid`) VALUES
-(1, NULL, 'Wooden hut', 'In Tallinn City center', '1000'),
-(2, 1, 'it kolledz', 'mustamje', '10'),
-(3, NULL, 'patarei vangla', 'ajalooline kompleks', '100000'),
-(4, NULL, 'patarei vangla', 'ajalooline kompleks', '100000'),
-(5, 1, 'kaks raadiot', 'tegelt on kolm raadiot', '2'),
-(6, 1, 'kaks raadiot', 'tegelt on kolm raadiot', '3'),
-(7, 1, 'kaks raadiot', 'tegelt on kolm raadiot', '3'),
-(8, 1, 'asdf', 'asdf', '123'),
-(9, 1, 'asdf', 'asdf', '123'),
-(10, 1, 'asdf', 'asdf', '123'),
-(11, 1, 'asdf', 'asdf', '123'),
-(12, 1, 'm6mm', '1234', '9999');
+INSERT INTO `auction` (`id`, `user_id`, `title`, `description`, `startingbid`, `inserted`) VALUES
+(35, 1, 'Long Island City, NY', '4 bedroom, 3 bathroom', '1000000', '2020-04-27 22:37:28'),
+(36, 1, 'Grand Rapids, MI', '2 bedroom, 2 bathroom', '500000', '2020-04-29 03:49:28'),
+(37, 1, 'Burlington, IA', '3 bedroom, 2 bathroom', '750000', '2020-04-30 01:37:28'),
+(38, 1, 'Eagan, MN', '2 bedroom, 2 bathroom', '400000', '2020-04-30 01:37:28'),
+(41, 1, 'Kaufman, TX', '4 bedroom, 3 bathroom', '1200000', '2020-04-30 01:37:28'),
+(42, 1, 'Seattle, WA', '3 bedroom, 2 bathroom', '600000', '2020-04-30 01:37:28'),
+(43, 1, 'Milwaukee, WI', '2 bedroom, 2 bathroom', '550000', '2020-04-30 01:37:28'),
+(44, 1, 'Cleveland, OH', '3 bedroom, 3 bathroom', '650000', '2020-04-30 03:24:41');
 
 -- --------------------------------------------------------
 
@@ -72,17 +64,32 @@ CREATE TABLE `bid` (
   `bid` decimal(10,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Kärbi tabelit enne lisamist `bid`
+-- Tabeli struktuur tabelile `image`
 --
 
-TRUNCATE TABLE `bid`;
+CREATE TABLE `image` (
+  `id` int(11) NOT NULL,
+  `auction_id` int(11) NOT NULL,
+  `filename` varchar(255) NOT NULL,
+  `img_order` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
--- Andmete tõmmistamine tabelile `bid`
+-- Andmete tõmmistamine tabelile `image`
 --
 
-INSERT INTO `bid` (`id`, `auction_id`, `user_id`, `bid`) VALUES
-(1, 1, 1, '1000');
+INSERT INTO `image` (`id`, `auction_id`, `filename`, `img_order`) VALUES
+(12, 35, 'images/house-2.jpg', 0),
+(13, 36, 'images/house-3.jpg', 0),
+(14, 37, 'images/house-8.jpg', 0),
+(15, 38, 'images/house-7.jpg', 0),
+(17, 41, 'images/house-5.jpg', 0),
+(18, 42, 'images/house-1.jpg', 0),
+(19, 43, 'images/house-6.jpg', 0),
+(20, 44, 'images/house-4.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -98,11 +105,6 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Kärbi tabelit enne lisamist `users`
---
-
-TRUNCATE TABLE `users`;
 --
 -- Andmete tõmmistamine tabelile `users`
 --
@@ -136,6 +138,13 @@ ALTER TABLE `bid`
   ADD KEY `bid_ibfk_2` (`user_id`);
 
 --
+-- Indeksid tabelile `image`
+--
+ALTER TABLE `image`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `auction_id` (`auction_id`);
+
+--
 -- Indeksid tabelile `users`
 --
 ALTER TABLE `users`
@@ -151,13 +160,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT tabelile `auction`
 --
 ALTER TABLE `auction`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT tabelile `bid`
 --
 ALTER TABLE `bid`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT tabelile `image`
+--
+ALTER TABLE `image`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT tabelile `users`
@@ -181,6 +196,12 @@ ALTER TABLE `auction`
 ALTER TABLE `bid`
   ADD CONSTRAINT `bid_ibfk_1` FOREIGN KEY (`auction_id`) REFERENCES `auction` (`id`),
   ADD CONSTRAINT `bid_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+
+--
+-- Piirangud tabelile `image`
+--
+ALTER TABLE `image`
+  ADD CONSTRAINT `auction_id` FOREIGN KEY (`auction_id`) REFERENCES `auction` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
