@@ -24,7 +24,7 @@ require_once 'header.php';
               <div class="p-name">' . $item['title'] . '</div>
               <div class="p-price">Starting bid: ' . $item['startingbid'] . '€</div>
               <div class="p-desc">' . $item['desc'] . '</div>
-              <button class="p-add">Bid</button>
+              <button class="p-add" name="getuserbid">Bid</button>
             </div></div>';
             }
             ?>
