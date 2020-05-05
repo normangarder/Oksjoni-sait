@@ -313,7 +313,9 @@ function getTimeLeft($auction_id) {
     return date('c', strtotime($inserted_string . ' ' . $add));
 }
 
-function addBid() {
-
+function addBid($auction_id) {
+    guestGTFO();
+    $bid_sum = mysqli_real_escape_string($db, $_POST['getuserbid']);
+    
 
 }

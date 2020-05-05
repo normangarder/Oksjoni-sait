@@ -6,7 +6,8 @@ $replace_ids = [];
     <tr><th>image</th><th>user name</th><th>product</th><th>description</th><th>starting bid</th><th>time left</th><th>Last bid</th><th></th></tr>
     <?php
     foreach (getAuctions($db) as $row) {
-        echo '<tr><td><img src="' . getFirstAuctionImage($row['id']) . '"/></td><td>' . $row['username'] . '</td><td>' . $row['title'] . '</td><td>' . $row['desc'] . '</td><td>' . $row['startingbid'] . '€</td><td id="timeleft-' . $row['id'] . '">0</td></tr>';
+        echo '<tr><td><img src="' . getFirstAuctionImage($row['id']) . '"/></td><td>' . $row['username'] . '</td><td>' . $row['title'] . '</td><td>' . $row['desc'] . '</td><td>' . $row['startingbid'] . '€</td><td id="timeleft-' . $row['id'] . '">0</td><td id="timeleft-' . $row['id'] . '">0</td><td id="getuserbid' . '"><label for="getuserbid"><b>Bid</b></label>';
+          echo '<input type="text" placeholder="Enter your bid" name="getuserbid"><input type="submit" class="loginbtn" name="getuserbid"></td></tr>';
         $replace_ids[] = $row['id'];
     }
     ?>
